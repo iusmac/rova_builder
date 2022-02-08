@@ -1,0 +1,12 @@
+diff --git a/build/soong/java/droiddoc.go b/build/soong/java/droiddoc.go
+index b564fea01..ddc0682a1 100644
+--- a/build/soong/java/droiddoc.go
++++ b/build/soong/java/droiddoc.go
+@@ -1474,6 +1474,7 @@ func metalavaCmd(ctx android.ModuleContext, rule *android.RuleBuilder, javaVersi
+ 
+ 	cmd.BuiltTool(ctx, "metalava").
+ 		Flag(config.JavacVmFlags).
++		Flag("-J-Xmx6114m").
+ 		FlagWithArg("-encoding ", "UTF-8").
+ 		FlagWithArg("-source ", javaVersion.String()).
+ 		FlagWithRspFileInputList("@", srcs).

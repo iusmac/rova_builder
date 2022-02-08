@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <include name="local_manifests/includes/remove.xml" />
+
+    <remote name="iusmac" fetch="https://github.com/iusmac" revision="11" />
+
+    <project path="kernel/xiaomi/rova" name="kernel_rova" remote="iusmac" />
+    <project path="device/xiaomi/rova" name="device_rova" remote="iusmac" />
+    <project path="vendor/xiaomi/rova" name="vendor_rova" remote="iusmac" />
+</manifest>
