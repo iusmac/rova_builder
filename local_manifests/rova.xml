@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="iusmac" fetch="https://github.com/iusmac" revision="12" />
+
+    <project path="kernel/xiaomi/rova" name="kernel_rova" remote="iusmac" />
+    <project path="device/xiaomi/rova" name="recovery_rova" remote="iusmac" revision="orfox" />
+</manifest>
