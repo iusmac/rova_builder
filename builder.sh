@@ -13,7 +13,7 @@ if false && [ -d src/build/soong ]; then
         "$PWD"/patches/droiddoc-now-buildable-on-8GB-RAM-Machines.patch || exit $?
 fi
 
-bash ContainerizedAndroidBuilder/build.sh \
+bash ContainerizedAndroidBuilder/run.sh \
     --email 'iusico.maxim@libero.it' \
     --repo-url 'https://github.com/crdroidandroid/android.git' \
     --repo-revision '11.0' \
