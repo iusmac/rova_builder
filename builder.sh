@@ -16,7 +16,7 @@ fi
 bash ContainerizedAndroidBuilder/run.sh \
     --email 'iusico.maxim@libero.it' \
     --repo-url 'https://github.com/crdroidandroid/android.git' \
-    --repo-revision '11.0' \
+    --repo-revision '12.0' \
     --lunch-system 'lineage' \
     --lunch-device 'rova' \
     --lunch-flavor 'userdebug' \

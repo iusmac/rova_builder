@@ -1,4 +1,4 @@
 [submodule "ContainerizedAndroidBuilder"]
 	path = ContainerizedAndroidBuilder
 	url = https://github.com/iusmac/ContainerizedAndroidBuilder.git
-	branch = 11
+	branch = 12
