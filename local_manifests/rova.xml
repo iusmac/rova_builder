@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <include name="local_manifests/includes/remove.xml" />
+    <include name="local_manifests/includes/deps.xml" />
 
     <remote name="iusmac" fetch="https://github.com/iusmac" revision="12" />
 

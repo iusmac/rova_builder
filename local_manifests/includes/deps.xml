@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="lineage" fetch="https://github.com/lineageOS" revision="lineage-19.0" />
+    <project path="external/ant-wireless/antradio-library" name="android_external_ant-wireless_antradio-library" remote="lineage" />
+</manifest>
