@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="orfx" fetch="https://gitlab.com/OrangeFox/" revision="master" />
+
+    <project path="bootable/recovery/gui/theme" name="misc/theme" remote="orfx" />
+</manifest>
