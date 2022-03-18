@@ -50,10 +50,22 @@ RUN cd /tmp/scripts; \
     sed '/apt install lsb-core/d' | \
     sed 's/apt /apt-get /g' | bash 
 
-# Force using python3 for repo tool
-#---------------------------------#
-RUN rm -f /usr/bin/python
-RUN ln -s /usr/bin/python3 /usr/bin/python
+# Use pyenv shims for python instead
+#----------------------------------#
+ENV PYENV_ROOT="/home/$USER/.pyenv"
+RUN git clone --depth=1 https://github.com/pyenv/pyenv.git $PYENV_ROOT
+RUN apt-get remove -y python*
+ENV PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
+RUN git clone --depth=1 https://github.com/momo-lab/xxenv-latest.git \
+                        "$(pyenv root)"/plugins/xxenv-latest
+RUN apt-get install -y \
+            --no-install-recommends \
+            make build-essential libssl-dev zlib1g-dev \
+            libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+            libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+            libffi-dev liblzma-dev
+RUN pyenv latest install 2.7
+RUN pyenv latest install 3.9
 
 # Run everything as non-root
 #--------------------------#
