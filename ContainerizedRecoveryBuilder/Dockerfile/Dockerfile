@@ -67,6 +67,11 @@ RUN apt-get install -y \
             libffi-dev liblzma-dev
 RUN pyenv latest install 2.7
 RUN pyenv latest install 3.9
+RUN for shim in $(pyenv shims); do \
+        target=/usr/bin/"$(basename "$shim")"; \
+        rm -f "$target"; \
+        ln -s "$shim" "$target"; \
+    done
 
 # Run everything as non-root
 #--------------------------#
