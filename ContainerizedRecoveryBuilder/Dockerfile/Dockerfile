@@ -48,6 +48,7 @@ RUN cd /tmp/scripts; \
         setup/install_android_sdk.sh | \
     sed 's/sudo //g' | \
     sed '/apt install lsb-core/d' | \
+    sed 's/apt install/apt install --no-install-recommends/g' | \
     sed 's/apt /apt-get /g' | bash 
 
 # Use pyenv shims for python instead
