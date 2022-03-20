@@ -40,7 +40,7 @@ RUN apt-get -y upgrade
 RUN apt-get install -y \
             --no-install-recommends \
             git aria2 openssl ca-certificates \
-            gnupg curl wget ssh
+            gnupg curl wget ssh rsync
 
 RUN git clone --depth=1 https://gitlab.com/OrangeFox/misc/scripts /tmp/scripts
 RUN cd /tmp/scripts; \
