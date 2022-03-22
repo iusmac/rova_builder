@@ -5,5 +5,5 @@
 
     <project path="platform/external/Camera" name="GrapheneOS/platform_external_Camera" remote="github" revision="12.1" />
 
-    <project path="packages/apps/crDroidSettings" name="android_packages_apps_crDroidSettings" remote="iusmac" revision="12.0" />
+    <project path="packages/apps/crDroidSettings" name="android_packages_apps_crDroidSettings" remote="iusmac" revision="12.1" />
 </manifest>
