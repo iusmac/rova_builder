@@ -20,4 +20,5 @@ bash ContainerizedAndroidBuilder/run.sh \
     --lunch-system 'lineage' \
     --lunch-device 'rova' \
     --lunch-flavor 'userdebug' \
-    --ccache-size '50G'
+    --ccache-size '50G' \
+    --move-zips 1
