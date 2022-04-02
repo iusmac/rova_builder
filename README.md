@@ -50,7 +50,7 @@ iusmac@pc:~/rova_builder$ ./builder.sh
 Navigate to ``Build`` > ``Build ROM``
 
 ### Keep it up to date
-Don't forget to get latest builder changes:
+Don't forget to get latest builder updates using `Self update` option in the main menu or:
 ```console
 iusmac@pc:~/rova_builder$ git pull --recurse-submodules
 ```
