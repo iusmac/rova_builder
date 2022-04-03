@@ -4,9 +4,6 @@
     <remove-project name="crdroidandroid/android_packages_apps_Matlog" />
     <remove-project name="LineageOS/android_packages_apps_AudioFX" />
 
-    <!-- Replaced with custom one -->
-    <remove-project name="crdroidandroid/android_packages_apps_crDroidSettings" />
-
     <!-- Remove QCOM-CAF HALs, 'cause we're using our in-tree HALs -->
     <remove-project name="crdroidandroid/android_hardware_qcom_audio" />
     <remove-project name="crdroidandroid/android_hardware_qcom_display" />
