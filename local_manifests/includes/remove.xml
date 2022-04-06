@@ -2,7 +2,7 @@
 <manifest>
     <!-- Remove unused Apps -->
     <remove-project name="crdroidandroid/android_packages_apps_Matlog" />
-    <remove-project name="LineageOS/android_packages_apps_AudioFX" />
+    <remove-project name="crdroidandroid/android_packages_apps_AudioFX" />
 
     <!-- Replaced with custom one -->
     <remove-project name="crdroidandroid/android_packages_apps_crDroidSettings" />
