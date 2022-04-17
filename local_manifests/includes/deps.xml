@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <project path="packages/apps/crDroidSettings" name="android_packages_apps_crDroidSettings" remote="iusmac" revision="12.1" />
 </manifest>
