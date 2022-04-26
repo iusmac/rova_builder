@@ -7,23 +7,28 @@ function main() {
     # Repo tool requires python3
     pyenv latest global 3.9
 
-    if __confirm__ 'Init repo?'; then
-        yes | repo init \
-            --depth=1 \
-            --groups=default,-mips,-darwin \
-            --manifest-url="$MANIFEST_URL" \
-            --manifest-branch="$MANIFEST_BRANCH" || exit $?
+    if __confirm__ 'Init OrangeFox repo scripts?'; then
+        rm -rf OrangeFoxScripts &&
+        git clone --depth=1 "$MANIFEST_URL" OrangeFoxScripts || exit $?
     fi
 
     if __confirm__ 'Sync sources?'; then
-        repo sync \
-            --current-branch \
-            --fail-fast \
-            --force-sync \
-            --no-clone-bundle \
-            --no-tags \
-            --optimized-fetch \
-            --jobs="$__JOBS__" || exit $?
+        (
+            cd OrangeFoxScripts || {
+                printf "Missing 'OrangeFoxScripts' directory. Init repo scripts first.\n" >&2
+                exit 1
+            }
+
+            if [ ! -d "$SRC_DIR"/bootable/ ] ||
+                [ ! -d "$SRC_DIR"/build/ ] ||
+                [ ! -d "$SRC_DIR"/external/ ]; then
+                ./orangefox_sync.sh \
+                    --branch "$MANIFEST_BRANCH" \
+                    --path "$SRC_DIR"
+            else
+                ./update_fox.sh --path "$SRC_DIR"
+            fi
+        ) || exit $?
     fi
 
     if __confirm__ 'Build recovery?'; then

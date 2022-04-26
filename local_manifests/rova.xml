@@ -5,5 +5,5 @@
     <include name="local_manifests/includes/deps.xml" />
 
     <project path="kernel/xiaomi/rova" name="kernel_rova" remote="iusmac" />
-    <project path="device/xiaomi/rova" name="recovery_rova" remote="iusmac" revision="orfox-9.0" />
+    <project path="device/xiaomi/rova" name="recovery_rova" remote="iusmac" revision="orfox-10.0" />
 </manifest>
