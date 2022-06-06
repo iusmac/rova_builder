@@ -46,7 +46,7 @@ function main() {
 
         # shellcheck disable=SC1091
         source build/envsetup.sh &&
-        lunch "omni_$FOX_BUILD_DEVICE-eng" &&
+        lunch "twrp_$FOX_BUILD_DEVICE-eng" &&
         mka -j"$__JOBS__" recoveryimage
     fi
 }

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <remote name="iusmac_gitlab" fetch="https://gitlab.com/iusmac/" revision="12.1" />
-    <remote name="_TeamWin" fetch="https://github.com/TeamWin/" revision="android-10" />
 
     <project path="prebuilts/clang/host/linux-x86/clang-r445002" name="android_prebuilts_clang_host_linux-x86_clang-r445002" remote="iusmac_gitlab" />
-    <project path="vendor/qcom/opensource/commonsys" name="android_vendor_qcom_opensource_commonsys" remote="_TeamWin" />
 </manifest>
