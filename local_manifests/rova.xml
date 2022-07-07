@@ -3,9 +3,9 @@
     <include name="local_manifests/includes/remove.xml" />
     <include name="local_manifests/includes/deps.xml" />
 
-    <remote name="iusmac" fetch="https://github.com/iusmac" revision="12" />
+    <remote name="crdroid-8" fetch="https://github.com/crdroidandroid" revision="12.1" />
 
-    <project path="kernel/xiaomi/rova" name="kernel_rova" remote="iusmac" />
-    <project path="device/xiaomi/rova" name="device_rova" remote="iusmac" />
-    <project path="vendor/xiaomi/rova" name="vendor_rova" remote="iusmac" />
+    <project path="kernel/xiaomi/rova" name="android_kernel_xiaomi_rova" remote="crdroid-8" />
+    <project path="device/xiaomi/rova" name="android_device_xiaomi_rova" remote="crdroid-8" />
+    <project path="vendor/xiaomi/rova" name="android_vendor_xiaomi_rova" remote="crdroid-8" />
 </manifest>
