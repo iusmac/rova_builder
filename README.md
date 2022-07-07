@@ -5,7 +5,7 @@ This script is a simple wrapper around [ContainerizedAndroidBuilder](https://git
 
 #### 1.1 Clone this repo
 ```console
-iusmac@pc:~$ git clone --recursive https://github.com/iusmac/rova_builder.git -b 11
+iusmac@pc:~$ git clone --recursive https://github.com/iusmac/rova_builder.git -b crDroid-7
 ```
 
 **(!) Pay attention to the _--recursive_ option. It's required so that submodules are included as well.**
