@@ -1,11 +1,11 @@
 ## How to build Android 11+ based ROM for Xiaomi Redmi 4A/5A (rolex/riva)
 
 ### 1. Set up the script
-This script is a simple wrapper around [ContainerizedAndroidBuilder](https://github.com/iusmac/ContainerizedAndroidBuilder/tree/12).
+This script is a simple wrapper around [ContainerizedAndroidBuilder](https://github.com/iusmac/ContainerizedAndroidBuilder/tree/13).
 
 #### 1.1 Clone this repo
 ```console
-iusmac@pc:~$ git clone --recursive https://github.com/iusmac/rova_builder.git -b 12
+iusmac@pc:~$ git clone --recursive https://github.com/iusmac/rova_builder.git -b 13
 ```
 
 **(!) Pay attention to the _--recursive_ option. It's required so that submodules are included as well.**
@@ -21,7 +21,7 @@ iusmac@pc:~/rova_builder$ chmod +x builder.sh
 ```
 
 #### 1.4 Open the _builder.sh_ file and make appropriate changes for ``--email``, ``--ccache-size``, etc.
-- Discover more about customizations and how to speed the build on [ContainerizedAndroidBuilder](https://github.com/iusmac/ContainerizedAndroidBuilder/tree/12).
+- Discover more about customizations and how to speed the build on [ContainerizedAndroidBuilder](https://github.com/iusmac/ContainerizedAndroidBuilder/tree/13).
 
 ### 2. Install Docker on your system
 ```console
