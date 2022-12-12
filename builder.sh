@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 bash ContainerizedAndroidBuilder/run.sh \
-    --email 'iusico.maxim@libero.it' \
+    --android '12.1'  \
     --repo-url 'https://github.com/crdroidandroid/android.git' \
     --repo-revision '12.1' \
     --lunch-system 'lineage' \
