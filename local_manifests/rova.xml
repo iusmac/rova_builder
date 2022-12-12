@@ -3,7 +3,7 @@
     <include name="local_manifests/includes/remove.xml" />
     <include name="local_manifests/includes/deps.xml" />
 
-    <remote name="iusmac" fetch="https://github.com/iusmac" revision="13" />
+    <remote name="iusmac" fetch="https://github.com/iusmac" revision="13-dev" />
 
     <project path="kernel/xiaomi/rova" name="kernel_rova" remote="iusmac" />
     <project path="device/xiaomi/rova" name="device_rova" remote="iusmac" />
