@@ -14,7 +14,7 @@ if false && [ -d src/build/soong ]; then
 fi
 
 bash ContainerizedAndroidBuilder/run.sh \
-    --email 'iusico.maxim@libero.it' \
+    --android '11.0'  \
     --repo-url 'https://github.com/crdroidandroid/android.git' \
     --repo-revision '11.0' \
     --lunch-system 'lineage' \
