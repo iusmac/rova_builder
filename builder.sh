@@ -6,6 +6,6 @@ bash ContainerizedAndroidBuilder/run.sh \
     --repo-revision '13.0' \
     --lunch-system 'lineage' \
     --lunch-device 'rova' \
-    --lunch-flavor 'userdebug' \
+    --lunch-flavor 'user' \
     --ccache-size '50G' \
     --move-zips 1
