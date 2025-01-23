@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 bash ContainerizedAndroidBuilder/run.sh \
-    --android '14.0'  \
+    --android '15.0'  \
     --repo-url 'https://github.com/crdroidandroid/android.git' \
-    --repo-revision '14.0' \
+    --repo-revision '15.0' \
     --lunch-system 'lineage' \
     --lunch-device 'rova' \
     --lunch-flavor 'user' \
