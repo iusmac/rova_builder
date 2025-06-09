@@ -59,6 +59,14 @@ function main() {
         sudo docker container stop "$__CONTAINER_NAME__" >/dev/null || exit $?
     fi
 
+    local timezone
+    if ! timezone="$(timedatectl show -P 'Timezone' 2>/dev/null)" &&
+        # Note: /etc/timezone can be a directory (seen on Ubuntu Server) or
+        # absent (e.g., Manjaro)
+        [ -f /etc/timezone ]; then
+        timezone="$(cat /etc/timezone)"
+    fi
+
     local entrypoint=/mnt/entrypoint.sh
     sudo docker run \
         --tty \
@@ -67,9 +75,8 @@ function main() {
         --name "$__CONTAINER_NAME__" \
         --tmpfs /tmp:rw,exec,nosuid,nodev,uid="${__USER_IDS__['uid']}",gid="${__USER_IDS__['gid']}" \
         --privileged \
-        --env TZ="$(timedatectl | awk '/Time zone:/ { print $3 }')" \
+        --env TZ="$timezone" \
         --env-file "$PWD"/env.list \
-        --volume /etc/timezone:/etc/timezone:ro \
         --volume /etc/localtime:/etc/localtime:ro \
         --volume "$__DIR__"/entrypoint.sh:"$entrypoint" \
         --volume "$PWD"/src/out:/mnt/src/out \
