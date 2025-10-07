@@ -4,11 +4,9 @@
 This script is a simple wrapper around [ContainerizedAndroidBuilder](https://github.com/iusmac/ContainerizedAndroidBuilder).
 1. Clone this repo
     ```console
-    git clone --recursive https://github.com/iusmac/rova_builder.git -b 16-dev
+    git clone --recursive https://github.com/iusmac/rova_builder.git -b 16-stable
     ```
     **(!) Pay attention to the _--recursive_ option. It's required so that submodules are included as well.**
-
-    **Note:** this is a _dev_ branch. It's prone to instability. To get stable tree, switch to the same branch without the _dev_ label.
 
 2. Enter into it
     ```console
