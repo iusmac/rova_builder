@@ -6,11 +6,11 @@ ARG GID
 
 # Environment variables
 #---------------------#
-ENV DEBIAN_FRONTEND noninteractive
-ENV SRC_DIR /mnt/src
-ENV OUT_DIR /mnt/src/out
-ENV CCACHE_DIR /mnt/ccache
-ENV CCACHE_EXEC /usr/bin/ccache
+ENV DEBIAN_FRONTEND=noninteractive
+ENV SRC_DIR=/mnt/src
+ENV OUT_DIR=/mnt/src/out
+ENV CCACHE_DIR=/mnt/ccache
+ENV CCACHE_EXEC=/usr/bin/ccache
 
 # Create host user
 #----------------#
