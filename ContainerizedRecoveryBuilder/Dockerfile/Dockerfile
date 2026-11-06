@@ -50,28 +50,6 @@ RUN cd /tmp/scripts; \
     sed 's/apt install/apt install --no-install-recommends/g' | \
     sed 's/apt /apt-get /g' | bash 
 
-# Use pyenv shims for python instead
-#----------------------------------#
-ENV PYENV_ROOT="/home/$USER/.pyenv"
-RUN git clone --depth=1 https://github.com/pyenv/pyenv.git $PYENV_ROOT
-RUN apt-get remove -y python*
-ENV PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
-RUN git clone --depth=1 https://github.com/momo-lab/xxenv-latest.git \
-                        "$(pyenv root)"/plugins/xxenv-latest
-RUN apt-get install -y \
-            --no-install-recommends \
-            make build-essential libssl-dev zlib1g-dev \
-            libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-            libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
-            libffi-dev liblzma-dev
-RUN pyenv install 2.7
-RUN pyenv install 3.9
-RUN for shim in $(pyenv shims); do \
-        target=/usr/bin/"$(basename "$shim")"; \
-        rm -f "$target"; \
-        ln -s "$shim" "$target"; \
-    done
-
 # Run everything as non-root
 #--------------------------#
 RUN find /home/$USER/ /mnt -exec chown \

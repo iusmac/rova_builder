@@ -4,9 +4,6 @@ __JOBS__="$(nproc --all)"
 readonly __JOBS__
 
 function main() {
-    # Repo tool requires python3
-    pyenv global 3.9
-
     if __confirm__ 'Init OrangeFox repo scripts?'; then
         rm -rf OrangeFoxScripts &&
         git clone --depth=1 "$MANIFEST_URL" OrangeFoxScripts || exit $?
@@ -40,9 +37,6 @@ function main() {
         # the absolute path and fail if we will change the mount point for
         # some reason.
         export OUT_DIR=out
-
-        # OrangeFox requires python2
-        pyenv global 2.7
 
         # shellcheck disable=SC1091
         source build/envsetup.sh
