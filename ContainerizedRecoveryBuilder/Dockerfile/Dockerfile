@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:trixie
 
 ARG USER
 ARG UID
@@ -40,14 +40,13 @@ RUN apt-get -y upgrade
 RUN apt-get install -y \
             --no-install-recommends \
             git aria2 openssl ca-certificates \
-            gnupg curl wget ssh rsync
+            curl ssh rsync
 
 RUN git clone --depth=1 https://gitlab.com/OrangeFox/misc/scripts /tmp/scripts
 RUN cd /tmp/scripts; \
     cat setup/android_build_env.sh \
         setup/install_android_sdk.sh | \
     sed 's/sudo //g' | \
-    sed '/apt install lsb-core/d' | \
     sed 's/apt install/apt install --no-install-recommends/g' | \
     sed 's/apt /apt-get /g' | bash 
 
