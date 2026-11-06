@@ -43,12 +43,15 @@ RUN apt-get install -y \
             curl ssh rsync
 
 RUN git clone --depth=1 https://gitlab.com/OrangeFox/misc/scripts /tmp/scripts
-RUN cd /tmp/scripts; \
-    cat setup/android_build_env.sh \
-        setup/install_android_sdk.sh | \
-    sed 's/sudo //g' | \
-    sed 's/apt install/apt install --no-install-recommends/g' | \
-    sed 's/apt /apt-get /g' | bash 
+RUN cd /tmp/scripts; for script in \
+        setup/android_build_env.sh \
+        setup/install_android_sdk.sh; \
+    do \
+        sed "$script" \
+            -e 's/sudo //g' \
+            -e 's/apt install/apt install --no-install-recommends/g' \
+            -e 's/apt /apt-get /g' | bash; \
+    done
 
 # Run everything as non-root
 #--------------------------#
