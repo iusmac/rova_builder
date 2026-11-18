@@ -9,7 +9,7 @@ function main() {
         exit 1
     fi
 
-    mkdir -p .home/ \
+    mkdir -p \
         src/{out,.repo/local_manifests/} \
         ccache
 
@@ -23,6 +23,7 @@ function main() {
     fi
 
     local home="/home/${__USER_IDS__['name']}"
+    local -i force_copy_home=0
 
     if ! sudo docker inspect --type image "$__IMAGE_TAG__" &> /dev/null; then
         printf "Note: Unable to find '%s' image. Start building...\n" "$__IMAGE_TAG__" >&2
@@ -33,8 +34,11 @@ function main() {
             --build-arg UID="${__USER_IDS__['uid']}" \
             --build-arg GID="${__USER_IDS__['gid']}" \
             --tag "$__IMAGE_TAG__" "$__DIR__"/Dockerfile/ || exit $?
-
         printf "We're almost there...\n" >&2
+        force_copy_home=1
+    fi
+    if [ $force_copy_home -eq 1 ] || [ ! -d .home ]; then
+        printf "Copying HOME directory to host...\n" >&2
         sudo docker run \
             --interactive \
             --rm \
